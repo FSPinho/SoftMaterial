@@ -1,0 +1,85 @@
+@import './_colors/variables.scss';
+@import './_shadows.scss';
+@import './_typography.scss';
+
+$color-primary: $teal-500;
+$color-primary-light: $teal-400;
+$color-primary-dark: $teal-700;
+$color-accent: $pink-A200;
+$color-accent-light: $pink-A100;
+$color-accent-dark: $pink-A400;
+$color-text-light: $white;
+$color-text-dark: $black;
+$color-primary-background: $white;
+$color-secondary-background: $white;
+
+$media-max-phone-width: 479px;
+$media-min-tablet-width: 480px;
+$media-max-tablet-width: 839px;
+$media-min-desktop-width: 840px;
+
+$margin: 20px;
+$padding: 20px;
+
+$toolbar-theme: dark;
+$toolbar-height-desktop: 80px;
+$toolbar-height-tablet: 64px;
+$toolbar-height-phone: 56px;
+$toolbar-line-width: 4px;
+$toolbar-font-size-phone: 16px;
+$toolbar-font-size-tablet: 20px;
+$toolbar-font-size-desktop: 24px;
+
+$sidenav-width: 240px;
+
+$button-height: 36px;
+$button-padding: $padding;
+$button-icon-size: 24px;
+
+/* MIXINS */
+
+@mixin responsive($attr, $phone, $tablet, $desktop) {
+    @media screen and (max-width: $media-max-phone-width) {
+        #{$attr}: $phone;
+    }
+    @media screen and (min-width: $media-min-tablet-width) and (max-width: $media-max-tablet-width) {
+        #{$attr}: $tablet;
+    }
+    @media screen and (min-width: $media-min-desktop-width) {
+        #{$attr}: $desktop;
+    }
+}
+
+@mixin show-in-phone {
+    @media screen and (min-width: $media-min-tablet-width) {
+        display: none !important;
+    }
+}
+@mixin hide-in-phone {
+    @media screen and (max-width: $media-max-phone-width) {
+        display: none !important;
+    }
+}
+@mixin show-in-tablet {
+    @media screen and (max-width: $media-max-phone-width) {
+        display: none !important;
+    }
+    @media screen and (min-width: $media-min-desktop-width) {
+        display: none !important;
+    }
+}
+@mixin hide-in-tablet {
+    @media screen and (min-width: $media-min-tablet-width) and (max-width: $media-max-tablet-width) {
+        display: none !important;
+    }
+}
+@mixin show-in-desktop {
+    @media screen and (max-width: $media-max-tablet-width) {
+        display: none !important;
+    }
+}
+@mixin hide-in-desktop {
+    @media screen and (min-width: $media-min-desktop-width) {
+        display: none !important;
+    }
+}

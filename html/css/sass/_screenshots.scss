@@ -1,0 +1,7 @@
+@import './_defaults.scss';
+
+.s__ss-wrapper {
+    .s__ss {
+        @include shadow(2);
+    }
+}

@@ -1,0 +1,72 @@
+@import './defaults.scss';
+@import './icon-button.scss';
+
+.s__sidenav {
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0;
+    width: $sidenav-width;
+    background: $color-primary-background;
+    transition: left .15s linear;
+
+    @include hide-in-desktop;
+
+    @include shadow(2);
+
+    &.s__sidenav-hided {
+        left: -($sidenav-width + 10px);
+    }
+
+    .s__sidenav-header {
+
+        display: flex;
+        align-items: center;
+        padding: 0 $padding;
+        background-color: $color-primary-dark;
+        color: $white;
+
+        @include responsive(height, $toolbar-height-phone, $toolbar-height-tablet, $toolbar-height-desktop);
+
+        .s__toolbar-close-sidenav {
+            @extend .s__icon-button;
+        }
+    }
+
+    .s__sidenav-content {
+        display: flex;
+        flex-direction: column;
+
+        .s__sidenav-menu-item {
+
+            display: flex;
+            align-items: center;
+            padding: 0 $padding;
+            padding-left: $padding + $toolbar-line-width;
+            @include responsive(line-height, $toolbar-height-phone, $toolbar-height-tablet, $toolbar-height-desktop);
+
+            text-decoration: none;
+            color: $color-text-dark;
+
+            &:hover {
+                background-color: rgba($color-primary, 0.1)
+            }
+
+            &.active {
+
+                color: $color-accent;
+                padding-left: $padding;
+
+                border-left: {
+                    width: $toolbar-line-width;
+                    color: $color-accent;
+                    style: solid;
+                } 
+
+            }
+
+            i {
+                margin-right: $margin;
+            }
+        }
+    }
+}

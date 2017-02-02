@@ -1,0 +1,85 @@
+@import './_defaults.scss';
+@import './_icon-button.scss';
+
+.s__toolbar {
+
+    position: fixed;
+    top: 0; 
+    left: 0; right: 0;
+    display: flex;
+    align-items: center;
+    transition: all .2s linear;
+    padding: 0 $padding;
+    
+    @include responsive(height, $toolbar-height-phone, $toolbar-height-tablet, $toolbar-height-desktop);
+    @include shadow(2);
+
+    @if $toolbar-theme == dark {
+        background-color: rgba($color-primary, 1.0);
+        color: $color-text-light;
+        &.s__toolbar-transparent {
+            background-color: rgba($color-primary, 0.0);
+            box-shadow: none;
+        }
+    } @else if $toolbar-theme == light {
+        background-color: rgba($white, 1.0);
+        color: $color-primary;
+        &.s__toolbar-transparent {
+            background-color: rgba($white, 0.0);
+            box-shadow: none;
+        }
+    }
+
+    .s__toolbar-open-sidenav {
+        @extend .s__icon-button;
+        @include hide-in-desktop;
+    }
+
+    .s__toolbar-title {
+        @include responsive(
+            font-size, 
+            $toolbar-font-size-phone,
+            $toolbar-font-size-tablet,
+            $toolbar-font-size-desktop
+        );     
+        font-weight: $font-black; 
+        color: inherit;  
+    }
+
+    .s__toolbar-menu-item {
+        @include responsive(line-height, $toolbar-height-phone, $toolbar-height-tablet, $toolbar-height-desktop);
+        @include show-in-desktop;
+
+        padding: 0 $padding;
+        font-weight: $font-bold;
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            background: rgba($color-primary-light, 0.2);
+        }
+
+        &.active {
+
+            padding-top: $toolbar-line-width;
+
+            @include responsive(
+                line-height, 
+                $toolbar-height-phone - $toolbar-line-width * 2, 
+                $toolbar-height-tablet - $toolbar-line-width * 2, 
+                $toolbar-height-desktop - $toolbar-line-width * 2);
+
+            border-bottom: {
+                width: $toolbar-line-width;
+                color: $color-accent;
+                style: solid;
+            } 
+
+        }
+    }
+
+    a {
+        margin: 0 $margin/4;
+    }
+
+}
