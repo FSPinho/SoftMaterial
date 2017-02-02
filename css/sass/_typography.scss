@@ -15,32 +15,32 @@ h4 { font-weight: $font-bold; font-size: 16px !important;; }
 h5 { font-weight: $font-bold; font-size: 14px !important;; }
 h6 { font-weight: $font-bold; font-size: 12px !important;; }
 
-.s__landing-top-body-text {
+.#{$namespace}landing-top-body-text {
     font-size: 20px;
     font-weight: $font-light;
 }
 
-.s__page-section-title {
+.#{$namespace}page-section-title {
     margin-bottom: 20px;
     font-size: 24px;
     font-weight: $font-light;
     text-align: center;
 }
 
-.s__page-section-text {
+.#{$namespace}page-section-text {
     text-align: justify;
     font-size: 20px;
     font-weight: $font-light;
 }
 
-.s__feature-title {
+.#{$namespace}feature-title {
     font-size: 20px;
     font-weight: $font-bold;
     text-align: center;
     display: block;
 }
 
-.s__feature-text {
+.#{$namespace}feature-text {
     font-size: 18px;
     text-align: center;
     display: block;

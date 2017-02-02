@@ -1,6 +1,6 @@
 @import './defaults.scss';
 
-.s__icon-button {
+.#{$namespace}icon-button {
     width: $button-height;
     height: $button-height;
     border-radius: 50%;

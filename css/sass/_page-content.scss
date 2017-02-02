@@ -1,6 +1,6 @@
 @import './_defaults.scss';
 
-.s__page-content {
+.#{$namespace}page-content {
     position: fixed;
     @include responsive(top, $toolbar-height-phone, $toolbar-height-tablet, $toolbar-height-desktop);
     padding-top: 2 * $padding;
@@ -8,19 +8,11 @@
     left: 0; right: 0;
     overflow-y: auto;
 
-    .s__page-section {
+    .#{$namespace}page-section {
         padding: $padding 0;
         margin: $padding 0;
         overflow: visible;
 
-    }
-
-    .s__page-section-reviews {
-        padding: 40px 0 !important;
-        position: relative;
-        background: url("../img/background-2.svg") no-repeat;
-        background-size: 110%;
-        background-position: center;
     }
 
 }

@@ -1,6 +1,7 @@
 @import './_colors/variables.scss';
 @import './_shadows.scss';
-@import './_typography.scss';
+
+$namespace: s__;
 
 $color-primary: $teal-500;
 $color-primary-light: $teal-400;

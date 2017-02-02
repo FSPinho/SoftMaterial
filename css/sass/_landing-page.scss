@@ -1,0 +1,60 @@
+@import './_defaults.scss';
+
+.#{$namespace}landing-top-background-image {
+    height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0; right: 0;
+	z-index: -1;
+    background-color: $color-primary-dark;
+
+    .#{$namespace}landing-top-background-image-over-layer {
+        content: "";
+        background: url("../img/background.svg") center / cover;
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        opacity: 0.5;
+    }
+}
+
+.#{$namespace}landing-title-container {
+    position: absolute;
+    @include responsive(top, $toolbar-height-phone, $toolbar-height-tablet, $toolbar-height-desktop);
+    height: 80vh;
+
+    .#{$namespace}landing-title {
+        position: absolute;
+        bottom: 0;
+        left: 0; right: 0;
+        height: 80vh;
+        z-index: 1;
+
+        @include responsive(font-size, 24px, 36px, 72px);
+    }
+
+    .#{$namespace}landing-title {
+        
+        & > div {
+            width: 100%;
+        }
+        
+        .#{$namespace}landing-title-text {
+            width: 100%;
+            
+            .bold {
+                font-weight: bold;
+            }
+
+            .#{$namespace}landing-title .thin {
+                font-weight: 200;
+            }
+        }
+    }
+}
+
+.#{$namespace}landing-content {
+    margin-top: 80vh;
+    min-height: 240px;
+    background: $color-primary-background;
+}

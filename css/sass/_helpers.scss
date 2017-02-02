@@ -1,16 +1,18 @@
-.s__spacer {
+@import './_defaults.scss';
+
+.#{$namespace}spacer {
     flex: 1;
 }
 
-.s__no-padding {
+.#{$namespace}no-padding {
     padding: 0 !important;
 }
 
-.s__no-margin {
+.#{$namespace}no-margin {
     margin: 0 !important;
 }
 
-.s__flex-align-center {
+.#{$namespace}flex-align-center {
     display: flex;
     justify-content: center;
 }

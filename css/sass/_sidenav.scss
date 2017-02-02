@@ -1,7 +1,7 @@
 @import './defaults.scss';
 @import './icon-button.scss';
 
-.s__sidenav {
+.#{$namespace}sidenav {
     position: fixed;
     top: 0; bottom: 0;
     left: 0;
@@ -13,11 +13,11 @@
 
     @include shadow(2);
 
-    &.s__sidenav-hided {
+    &.#{$namespace}sidenav-hided {
         left: -($sidenav-width + 10px);
     }
 
-    .s__sidenav-header {
+    .#{$namespace}sidenav-header {
 
         display: flex;
         align-items: center;
@@ -27,16 +27,16 @@
 
         @include responsive(height, $toolbar-height-phone, $toolbar-height-tablet, $toolbar-height-desktop);
 
-        .s__toolbar-close-sidenav {
-            @extend .s__icon-button;
+        .#{$namespace}toolbar-close-sidenav {
+            @extend .#{$namespace}icon-button;
         }
     }
 
-    .s__sidenav-content {
+    .#{$namespace}sidenav-content {
         display: flex;
         flex-direction: column;
 
-        .s__sidenav-menu-item {
+        .#{$namespace}sidenav-menu-item {
 
             display: flex;
             align-items: center;
