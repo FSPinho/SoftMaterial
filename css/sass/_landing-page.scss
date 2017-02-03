@@ -87,17 +87,17 @@
 }
 
 .#{$namespace}landing-section {
-    @include responsive(padding, 20px !important, 40px !important, 40px !important);
-
-    .#{$namespace}landing-section-title {
-        @include responsive(font-size, 18px, 20px, 24px);
-        font-weight: 300;
-        text-align: center;
-        width: 100%;
-        display: block;
-        margin-bottom: $margin * 2;
-    }  
+    @include responsive(padding, 20px !important, 40px !important, 40px !important); 
 }
+
+.#{$namespace}landing-section-title {
+    @include responsive(font-size, 18px, 20px, 24px);
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-bottom: $margin * 2;
+} 
 
 .#{$namespace}landing-video-section {
     padding: 0 !important;
@@ -141,4 +141,60 @@
     text-align: center;
     font-size: 18px;
     font-weight: 300;
+}
+
+.#{$namespace}landing-trusted-container {
+    @include responsive(display, block, flex, flex);
+    @include responsive(align-items, none, stretch, stretch);
+    margin-bottom: $margin * 2 !important;
+
+    .#{$namespace}landing-trusted-title {
+        width: 100%;
+        text-align: left;
+        font-size: 24px;
+        font-weight: 500;
+        display: block;
+        color: #FFFFFF;
+    }
+
+    .#{$namespace}landing-trusted-subtitle {
+        width: 100%;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 300;
+        display: block;
+        margin-bottom: $margin;
+        color: #FFFFFF;
+    }
+
+    .#{$namespace}landing-trusted-text {
+        width: 100%;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 300;
+        color: #FFFFFF;
+        margin-bottom: $margin * 2;
+        display: block;
+    }
+
+    .#{$namespace}landing-trusted-image {
+        background: url("../img/landing-image-04.png") center / cover;
+        @include responsive(height, 240px, auto, auto);
+    }
+}
+
+.#{$namespace}landing-join-icon {
+    @include responsive(height, 72px, 96px, 150px);
+    @include responsive(width, 72px, 96px, 150px);
+    border-radius: 50%;
+    margin: auto;
+    margin-top: $margin;
+    i {
+        @include responsive(width, 72px, 96px, 150px);
+        @include responsive(line-height, 72px, 96px, 150px);
+        @include responsive(font-size, 52px, 72px, 96px);
+
+        text-align: center;
+        color: #FFFFFF;
+    }
 }

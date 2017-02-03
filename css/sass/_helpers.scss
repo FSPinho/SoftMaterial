@@ -4,6 +4,10 @@
     flex: 1;
 }
 
+.#{$namespace}padding {
+    padding: $padding !important;
+}
+
 .#{$namespace}no-padding {
     padding: 0 !important;
 }
