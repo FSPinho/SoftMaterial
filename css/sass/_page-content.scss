@@ -4,6 +4,7 @@
     position: fixed;
     @include responsive(top, $toolbar-height-phone, $toolbar-height-tablet, $toolbar-height-desktop);
     padding-top: 2 * $padding;
+    margin-bottom: 0 !important;
     bottom: 0;
     left: 0; right: 0;
     overflow-y: auto;
@@ -13,6 +14,10 @@
         margin: $padding 0;
         overflow: visible;
 
+    }
+
+    footer {
+        margin-top: 0 !important;
     }
 
 }

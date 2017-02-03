@@ -1,0 +1,11 @@
+@import './defaults.scss';
+
+.#{$namespace}border-button {
+    border-radius: 2px;
+    border: 1px solid #FFFFFF;
+    text-transform: uppercase;
+    color: inherit;
+    padding: 8px $padding;
+
+    @include responsive(font-size, 10px, 12px, 14px);
+}

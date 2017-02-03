@@ -15,12 +15,16 @@ $(function() {
     if($('.s__toolbar').data('show-after')) {
         $('.s__toolbar').addClass('s__toolbar-transparent');
         $('.s__page-content').scroll(function() {
-            var showAfter = $(window).height() * .4;
-            if($(this).scrollTop() > showAfter) {
+            var showAfter = $(window).height() * .2;
+            var scrollTop = $(this).scrollTop();
+            if(scrollTop > showAfter) {
                 $('.s__toolbar').removeClass('s__toolbar-transparent');
+                $('.s__toolbar-logo').removeClass('s__toolbar-logo-large');
             } else {
                 $('.s__toolbar').addClass('s__toolbar-transparent');
+                $('.s__toolbar-logo').addClass('s__toolbar-logo-large');
             }
+
         });
     }
 
@@ -35,7 +39,7 @@ $(function() {
 	$('.s__page-content').on('scroll resize', function() {
 
         /* Just to large screens */
-		if($(window).width() > 600) {
+		if($(window).width() > 100) {
 			var scrollTop = $(window).scrollTop(),
 	            scrollBot = scrollTop + $(window).height(),
 	            elTop = ptc.offset().top,
@@ -55,7 +59,7 @@ $(function() {
 	    }
 
         if($(window).width() > 601) {
-	        var maxH = 1000;
+	        var maxH = 300;
 	        visible = visible <= maxH? visible: maxH;
 	        $(".s__landing-top-background-image-over-layer").css("opacity", visible/maxH);
 		}
@@ -71,7 +75,7 @@ $(function() {
 
 		var body = $(".s__page-content");
 		body.scrollTop(0);
-		body.stop().animate({scrollTop: ($(window).height() * .4)}, 700, 'swing', function() {
+		body.stop().animate({scrollTop: ($(window).height() * .2)}, 700, 'swing', function() {
 			enableScroll();
 		});
     }, 100);

@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     transition: all .2s linear;
-    padding: 0 $padding;
+    padding: 0 $padding / 2;
     
     @include responsive(height, $toolbar-height-phone, $toolbar-height-tablet, $toolbar-height-desktop);
     @include shadow(2);
@@ -46,13 +46,36 @@
         color: inherit;  
     }
 
+    .#{$namespace}toolbar-logo {
+        
+        transition: all .2s linear;
+        @include responsive(
+            height, 
+            $toolbar-height-phone - $padding,
+            $toolbar-height-tablet - $padding,
+            $toolbar-height-desktop - $padding
+        );  
+
+        &.#{$namespace}toolbar-logo-large {
+            @include responsive(
+                height, 
+                $toolbar-height-phone * 1.3 - $padding,
+                $toolbar-height-tablet * 1.3 - $padding,
+                $toolbar-height-desktop * 1.3 - $padding
+            );  
+            margin-top: $margin;
+        }
+    }
+
     .#{$namespace}toolbar-menu-item {
         @include responsive(line-height, $toolbar-height-phone, $toolbar-height-tablet, $toolbar-height-desktop);
         @include show-in-desktop;
 
         padding: 0 $padding;
-        font-weight: $font-bold;
+        font-weight: $font-light;
         text-decoration: none;
+        text-transform: uppercase;
+        font-size: 18px;
         color: inherit;
 
         &:hover {
@@ -80,6 +103,6 @@
 
     a {
         margin: 0 $margin/4;
-    }
+    } 
 
 }

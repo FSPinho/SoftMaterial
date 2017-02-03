@@ -1,7 +1,7 @@
 @import './_defaults.scss';
 
 .#{$namespace}landing-top-background-image {
-    height: 100vh;
+    height: 90vh;
 	position: absolute;
 	top: 0;
 	left: 0; right: 0;
@@ -10,7 +10,7 @@
 
     .#{$namespace}landing-top-background-image-over-layer {
         content: "";
-        background: url("../img/background.svg") center / cover;
+        background: url("../img/landing-image.png") center / cover;
         position: absolute;
         top: 0; bottom: 0;
         left: 0; right: 0;
@@ -21,19 +21,16 @@
 .#{$namespace}landing-title-container {
     position: absolute;
     @include responsive(top, $toolbar-height-phone, $toolbar-height-tablet, $toolbar-height-desktop);
-    height: 80vh;
+    height: 60vh;
 
     .#{$namespace}landing-title {
         position: absolute;
         bottom: 0;
         left: 0; right: 0;
-        height: 80vh;
+        height: 60vh;
         z-index: 1;
 
         @include responsive(font-size, 24px, 36px, 72px);
-    }
-
-    .#{$namespace}landing-title {
         
         & > div {
             width: 100%;
@@ -50,11 +47,41 @@
                 font-weight: 200;
             }
         }
+
+        .#{$namespace}landing-subtitle-text {
+            font-weight: bold;
+            @include responsive(font-size, 18px, 20px, 24px);
+            display: block;
+        }
+
+        .#{$namespace}landing-text {
+            font-weight: 300;
+            text-align: left;
+            @include responsive(max-width, 180px, 380px, 480px);
+            @include responsive(font-size, 14px, 16px, 18px);
+            margin: auto;
+            display: block;
+
+            &.with-margin {
+                @include responsive(padding-left, 0, 140px, 180px); 
+            }
+        }
     }
+
 }
 
 .#{$namespace}landing-content {
-    margin-top: 80vh;
+    margin-top: 60vh;
+    margin-bottom: 0 !important;
     min-height: 240px;
     background: $color-primary-background;
+    position: relative;
+
+    .#{$namespace}landing-left-phone {
+        position: absolute;
+        @include hide-in-phone;
+        @include responsive(height, 100px, 300px, 480px); 
+        @include responsive(top, 100px, -150px, -240px); 
+    }
+
 }
