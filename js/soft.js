@@ -1,5 +1,9 @@
 $(function() {
 
+    var responsive = function(phone, tablet, desktop) {
+        return $(window).width() < 480? phone: $(window).width() < 840? tablet: desktop;
+    }
+
     $('.s__toolbar-open-sidenav').click(function() {
         $('.s__sidenav').removeClass('s__sidenav-hided');
     });
@@ -36,8 +40,7 @@ $(function() {
     /* Top image */
 
     var ptc = $('.s__landing-title-container');
-	$('.s__page-content').on('scroll resize', function() {
-
+    var repositTitle = function() {
         /* Just to large screens */
 		if($(window).width() > 100) {
 			var scrollTop = $(window).scrollTop(),
@@ -63,22 +66,46 @@ $(function() {
 	        visible = visible <= maxH? visible: maxH;
 	        $(".s__landing-top-background-image-over-layer").css("opacity", visible/maxH);
 		}
-	});
+	}
+    $('.s__page-content').on('scroll resize', repositTitle);
+    $(window).on("orientationchange", repositTitle);
 
 	/* End - Top Image */
 
+    /* Cellpone position */
+    var repositCell = function() {
+        var textLeft = 
+            parseInt($('.s__landing-text').css('margin-left').replace('px', '')) + 
+            parseInt($('.s__landing-text').css('padding-left').replace('px', ''));
+        var maxCellWidth = responsive(180, 180, 240);
+        var cellWidth = textLeft > maxCellWidth? maxCellWidth: textLeft;
+        var cellHeight = cellWidth*540/293;
+        var cellHeight = cellHeight > 480? 480: cellHeight;
+        $('.s__landing-left-phone').width(cellWidth);
+        $('.s__landing-left-phone').css('left', textLeft/2 - cellWidth/2);
+        $('.s__landing-left-phone').css('top', -cellHeight/2);
+    }
+    repositCell();
+    $(window).resize(repositCell);
+    $(window).on("orientationchange", repositCell);
+
     /* Scroll Effect */
 
-    setTimeout(function() {
-    	disableScroll();
-        $(".s__foreground").fadeOut("fast");
+    var makeScroll = function() {
+        $(".s__foreground").fadeIn(0);
+        setTimeout(function() {
+            disableScroll();
+            $(".s__foreground").fadeOut("fast");
 
-		var body = $(".s__page-content");
-		body.scrollTop(0);
-		body.stop().animate({scrollTop: ($(window).height() * .2)}, 700, 'swing', function() {
-			enableScroll();
-		});
-    }, 100);
+            var body = $(".s__page-content");
+            body.scrollTop(0);
+            body.stop().animate({scrollTop: ($(window).height() * .2)}, 700, 'swing', function() {
+                enableScroll();
+            });
+        }, 100);
+    }
+    makeScroll();
+    $(window).on("orientationchange", makeScroll);
 
     /* End - Scroll Effect */
 

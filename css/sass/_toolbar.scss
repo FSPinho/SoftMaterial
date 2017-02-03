@@ -48,6 +48,7 @@
 
     .#{$namespace}toolbar-logo {
         
+        margin-left: $margin/4;
         transition: all .2s linear;
         @include responsive(
             height, 
@@ -59,11 +60,16 @@
         &.#{$namespace}toolbar-logo-large {
             @include responsive(
                 height, 
-                $toolbar-height-phone * 1.3 - $padding,
-                $toolbar-height-tablet * 1.3 - $padding,
+                $toolbar-height-phone * 1 - $padding,
+                $toolbar-height-tablet * 1 - $padding,
                 $toolbar-height-desktop * 1.3 - $padding
             );  
-            margin-top: $margin;
+            @include responsive(
+                margin-top, 
+                0,
+                0,
+                $margin
+            );  
         }
     }
 

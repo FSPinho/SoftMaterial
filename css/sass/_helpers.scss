@@ -16,3 +16,9 @@
     display: flex;
     justify-content: center;
 }
+
+.#{$namespace}center-aligned {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

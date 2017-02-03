@@ -4,7 +4,15 @@
 @import '_toolbar.scss';
 @import '_sidenav.scss';
 @import '_page-content.scss';
+@import '_button.scss';
 @import '_icon-button.scss';
 @import '_border-button.scss';
 
 @import '_landing-page.scss';
+
+$primary-color: $color-primary;
+$primary-color-light: $color-primary-light;
+$primary-color-dark: $color-primary-dark;
+$secondary-color: $color-accent;
+
+@import '../../plugins/materialize/sass/materialize.scss';

@@ -18,6 +18,13 @@ $media-max-phone-width: 479px;
 $media-min-tablet-width: 480px;
 $media-max-tablet-width: 839px;
 $media-min-desktop-width: 840px;
+// Media Query Ranges
+$small-screen-up: 480px !default;
+$medium-screen-up: 840px !default;
+$large-screen-up: 1281px !default;
+$small-screen: 479px !default;
+$medium-screen: 839px !default;
+$large-screen: 1280px !default;
 
 $margin: 20px;
 $padding: 20px;

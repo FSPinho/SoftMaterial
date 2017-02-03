@@ -50,20 +50,20 @@
 
         .#{$namespace}landing-subtitle-text {
             font-weight: bold;
-            @include responsive(font-size, 18px, 20px, 24px);
+            @include responsive(font-size, 14px, 16px, 24px);
             display: block;
         }
 
         .#{$namespace}landing-text {
             font-weight: 300;
-            text-align: left;
-            @include responsive(max-width, 180px, 380px, 480px);
-            @include responsive(font-size, 14px, 16px, 18px);
+            @include responsive(text-align, center, left, left);
+            @include responsive(max-width, 300px, 300px, 500px);
+            @include responsive(font-size, 10px, 12px, 18px);
             margin: auto;
             display: block;
 
             &.with-margin {
-                @include responsive(padding-left, 0, 140px, 180px); 
+                @include responsive(padding-left, 0, 100px, 100px); 
             }
         }
     }
@@ -80,8 +80,65 @@
     .#{$namespace}landing-left-phone {
         position: absolute;
         @include hide-in-phone;
-        @include responsive(height, 100px, 300px, 480px); 
+        //@include responsive(height, 100px, 300px, 480px); 
         @include responsive(top, 100px, -150px, -240px); 
     }
 
+}
+
+.#{$namespace}landing-section {
+    @include responsive(padding, 20px !important, 40px !important, 40px !important);
+
+    .#{$namespace}landing-section-title {
+        @include responsive(font-size, 18px, 20px, 24px);
+        font-weight: 300;
+        text-align: center;
+        width: 100%;
+        display: block;
+        margin-bottom: $margin * 2;
+    }  
+}
+
+.#{$namespace}landing-video-section {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    iframe {
+        @include responsive(height, 180px, 270px, 360px);
+        @include responsive(width, 320px, 480px, 640px);
+        margin: auto;
+    }
+}
+
+.#{$namespace}landing-feature-icon {
+    @include responsive(height, 96px, 128px, 200px);
+    @include responsive(width, 96px, 128px, 200px);
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: $margin * 2;
+    i {
+        @include responsive(width, 96px, 128px, 200px);
+        @include responsive(line-height, 96px, 128px, 200px);
+        @include responsive(font-size, 72px, 96px, 160px);
+
+        text-align: center;
+        color: #FFFFFF;
+    }
+}
+
+.#{$namespace}landing-feature-title {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: $margin * 2;
+}
+
+.#{$namespace}landing-feature-text {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
 }
