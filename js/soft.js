@@ -74,16 +74,18 @@ $(function() {
 
     /* Cellpone position */
     var repositCell = function() {
-        var textLeft = 
-            parseInt($('.s__landing-text').css('margin-left').replace('px', '')) + 
-            parseInt($('.s__landing-text').css('padding-left').replace('px', ''));
-        var maxCellWidth = responsive(180, 180, 240);
-        var cellWidth = textLeft > maxCellWidth? maxCellWidth: textLeft;
-        var cellHeight = cellWidth*540/293;
-        var cellHeight = cellHeight > 480? 480: cellHeight;
-        $('.s__landing-left-phone').width(cellWidth);
-        $('.s__landing-left-phone').css('left', textLeft/2 - cellWidth/2);
-        $('.s__landing-left-phone').css('top', -cellHeight/2);
+        if($('.s__landing-left-phone').length > 0) {
+            var textLeft = 
+                parseInt($('.s__landing-text').css('margin-left').replace('px', '')) + 
+                parseInt($('.s__landing-text').css('padding-left').replace('px', ''));
+            var maxCellWidth = responsive(180, 180, 240);
+            var cellWidth = textLeft > maxCellWidth? maxCellWidth: textLeft;
+            var cellHeight = cellWidth*540/293;
+            var cellHeight = cellHeight > 480? 480: cellHeight;
+            $('.s__landing-left-phone').width(cellWidth);
+            $('.s__landing-left-phone').css('left', textLeft/2 - cellWidth/2);
+            $('.s__landing-left-phone').css('top', -cellHeight/2);
+        }
     }
     repositCell();
     $(window).resize(repositCell);

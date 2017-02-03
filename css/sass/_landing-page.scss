@@ -16,6 +16,15 @@
         left: 0; right: 0;
         opacity: 0.5;
     }
+
+    .#{$namespace}landing-top-background-image-over-layer-about {
+        content: "";
+        background: url("../img/landing-image-03.png") center / cover;
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        opacity: 0.9;
+    }
 }
 
 .#{$namespace}landing-title-container {
